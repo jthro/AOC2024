@@ -1,0 +1,10 @@
+use std::fs;
+
+use regex::{Match, Regex};
+
+fn main() {
+    let input: String = fs::read_to_string("./input.txt").unwrap();
+    let pattern = Regex::new(r"mul\((\d+), (\d+)\)").unwrap();
+
+    let res: Vec<(isize, isize)> = pattern.captures_iter(&input).map(|mt|(mt[1].parse().unwrap(), mt[2].parse().unwrap())).collect();
+}
