@@ -1,3 +1,5 @@
+#![warn(clippy::pedantic)]
+
 use std::fs;
 
 use regex::Regex;
